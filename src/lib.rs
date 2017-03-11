@@ -35,3 +35,18 @@ fn to_u32(bytes: &Vec<u8>, include_length: bool) -> Vec<u32> {
     }
     return v
 }
+
+fn mx(sum: u32, y: u32, z: u32, p: u32, e: u32, k: &Vec<u32>) -> u32 {
+    ((z>>5 ^ y<<2) + (y>>3 ^ z<<4)) ^ ((sum ^ y) + (k[(p&3^e) as usize] ^ z))
+}
+
+fn fixk(k: &Vec<u32>) -> Vec<u32> {
+    let mut key = k.clone();
+    if key.len() < 4 {
+        let length = key.len();
+        for i in length..4 {
+            key.push(0)          
+        }
+    }
+    key
+}
