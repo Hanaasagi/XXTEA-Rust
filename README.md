@@ -1,7 +1,9 @@
-# XXTEA-Rust
-[XXTEA](https://en.wikipedia.org/wiki/XXTEA) encryption algorithm library  
+# [XXTEA-Rust](https://crates.io/crates/xxtea)
+XXTEA encryption algorithm library  
 
-###Usage
+### What is XXTEA
+see this [page](https://en.wikipedia.org/wiki/XXTEA)
+### Example
 
     extern crate xxtea;
     extern crate base64;
@@ -27,5 +29,5 @@
         println!("{}", plain_texts);  // will output Hello World
     }
     
-###LICENSE
+### LICENSE
 MIT
