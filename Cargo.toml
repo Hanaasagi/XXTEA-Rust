@@ -1,9 +1,21 @@
 [package]
 name = "xxtea"
-version = "0.1.0"
-authors = ["Hanaasagi ambiguous404@gmail.com"]
+description = "XXTEA encryption algorithm library"
+authors = ["ambiguous404@gmail.com"]
+homepage = "https://crates.io/crates/xxtea"
+repository = "https://github.com/Hanaasagi/XXTEA-Rust"
+version = "0.1.1"
+license = "MIT"
 
 [dependencies]
 
 [dev-dependencies]
 rand = "0.3"
+
+
+
+
+
+
+
+
