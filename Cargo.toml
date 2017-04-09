@@ -1,7 +1,7 @@
 [package]
 name = "xxtea"
 version = "0.1.0"
-authors = ["Hanaasagi <ambiguous404@gmail.com"]
+authors = ["Hanaasagi ambiguous404@gmail.com"]
 
 [dependencies]
 
