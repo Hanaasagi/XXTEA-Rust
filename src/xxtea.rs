@@ -115,3 +115,17 @@ pub fn decrypt(data: &Vec<u8>, key: &str) -> Vec<u8> {
             true)
 }
 
+
+pub fn encrypt_raw(data: &str, key: &str) -> Vec<u8> {
+    let data = data.bytes().collect();
+    let key = key.bytes().collect();
+    to_bytes(&encrypt_(&mut to_u32(&data, false), &to_u32(&key, false)),
+            false)
+}
+
+pub fn decrypt_raw(data: &Vec<u8>, key: &str) -> Vec<u8> {
+    let key = key.bytes().collect();
+    to_bytes(&decrypt_(&mut to_u32(&data, false), &to_u32(&key, false)),
+            false)
+}
+
