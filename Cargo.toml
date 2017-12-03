@@ -1,10 +1,10 @@
 [package]
 name = "xxtea"
 description = "XXTEA encryption algorithm library"
-authors = ["ambiguous404@gmail.com"]
+authors = ["ambiguous404@gmail.com", "daniel_digeraas@netile.se"]
 homepage = "https://crates.io/crates/xxtea"
 repository = "https://github.com/Hanaasagi/XXTEA-Rust"
-version = "0.1.1"
+version = "0.2.0"
 license = "MIT"
 
 [dependencies]
