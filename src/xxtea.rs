@@ -115,3 +115,58 @@ pub fn decrypt(data: &Vec<u8>, key: &str) -> Vec<u8> {
             true)
 }
 
+/// Encrypt a u8 vector with XXTEA
+///
+/// *Note:* XXTEA works on 32 bit words. If input is not evenly dividable by
+/// four, it will be padded with zeroes. Padding information is lost after the
+/// encryption and this needs to be taken into consideration when decrypting
+/// messages.
+///
+/// # Arguments
+///
+/// * `data` - The data to be encrypted
+/// * `key` - encryption key
+///
+/// # Example
+///
+/// ```
+/// let key : &str = "SecretKey";
+/// let data : [u8; 5] = [11, 13, 0, 14, 15];
+///
+/// let encrypted_data = xxtea::encrypt_raw(&data.to_vec(), &key);
+/// // encrypted data will be 8 bytes (3 zeroes appended to the end)
+/// println!("Encrypted data: {:?}", encrypted_data);
+/// ```
+///
+pub fn encrypt_raw(data: &Vec<u8>, key: &str) -> Vec<u8> {
+    let key = key.bytes().collect();
+    to_bytes(&encrypt_(&mut to_u32(&data, false), &to_u32(&key, false)),
+            false)
+}
+
+/// Decrypt a u8 vector with XXTEA
+///
+/// The output isn't verified for correctness, thus additional checks needs to
+/// be performed on the output.
+///
+/// # Arguments
+///
+/// * `data` - The data to be decrypted
+/// * `key` - encryption key
+///
+/// # Example
+///
+/// ```
+/// let key : &str = "SecretKey";
+/// let data : [u8; 5] = [11, 13, 0, 14, 15];
+///
+/// let decrypted_data = xxtea::decrypt_raw(&data.to_vec(), &key);
+/// println!("Decrypted data: {:?}", decrypted_data);
+/// ```
+///
+pub fn decrypt_raw(data: &Vec<u8>, key: &str) -> Vec<u8> {
+    let key = key.bytes().collect();
+    to_bytes(&decrypt_(&mut to_u32(&data, false), &to_u32(&key, false)),
+            false)
+}
+
