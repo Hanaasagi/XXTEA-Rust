@@ -1,5 +1,5 @@
 # [XXTEA-Rust](https://crates.io/crates/xxtea)
-[![Build Status](https://travis-ci.org/Hanaasagi/XXTEA-Rust.svg?branch=master)](https://travis-ci.org/Hanaasagi/XXTEA-Rust) ![](https://img.shields.io/badge/release-2.0-F4A466.svg)  
+[![Build Status](https://travis-ci.org/Hanaasagi/XXTEA-Rust.svg?branch=master)](https://travis-ci.org/Hanaasagi/XXTEA-Rust) ![](https://img.shields.io/badge/release-0.2.0-F4A466.svg)  
 XXTEA encryption algorithm library  
 
 ### What is XXTEA
